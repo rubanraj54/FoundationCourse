@@ -127,6 +127,9 @@ rubanraj54@Ruby:~/fc_documents/FoundationCourse$
 
 
 9. steps to push the repository
+
+example 1
+
 rubanraj54@Ruby:~/fc_documents/FoundationCourse$ git branch
 * master
 rubanraj54@Ruby:~/fc_documents/FoundationCourse$ git remote -v
@@ -148,5 +151,51 @@ rubanraj54@Ruby:~/fc_documents/FoundationCourse$
 
 assignment ->mas_course-> foundation_course -> github tutorial -> Jarvis_git.txt
 
+example 2
 
-editting the file from browser to do pull
+rubanraj54@Ruby:~/fc_documents/FoundationCourse/mas_course$ mkdir github_tutorial_two
+rubanraj54@Ruby:~/fc_documents/FoundationCourse/mas_course$ cd github_tutorial
+github_tutorial/     github_tutorial_two/ 
+rubanraj54@Ruby:~/fc_documents/FoundationCourse/mas_course$ cd github_tutorial_two
+rubanraj54@Ruby:~/fc_documents/FoundationCourse/mas_course/github_tutorial_two$ nano wiki_file_two.txt
+rubanraj54@Ruby:~/fc_documents/FoundationCourse/mas_course/github_tutorial_two$ git add wiki_file_two.txt 
+rubanraj54@Ruby:~/fc_documents/FoundationCourse/mas_course/github_tutorial_two$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   wiki_file_two.txt
+
+rubanraj54@Ruby:~/fc_documents/FoundationCourse/mas_course/github_tutorial_two$ git commit -m "added second folder"
+[master a73003f] added second folder
+ 1 file changed, 1 insertion(+)
+ create mode 100644 mas_course/github_tutorial_two/wiki_file_two.txt
+rubanraj54@Ruby:~/fc_documents/FoundationCourse/mas_course/github_tutorial_two$ git push origin_ssh master
+Counting objects: 7, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (5/5), 448 bytes | 0 bytes/s, done.
+Total 5 (delta 0), reused 0 (delta 0)
+To git@github.com:rubanraj54/FoundationCourse.git
+   f8da4d3..a73003f  master -> master
+
+10. steps to pull the repo
+
+rubanraj54@Ruby:~/fc_documents/FoundationCourse$ git pull origin_ssh master
+remote: Counting objects: 5, done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 5 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (5/5), done.
+From github.com:rubanraj54/FoundationCourse
+ * branch            master     -> FETCH_HEAD
+   a73003f..11a1f6f  master     -> origin_ssh/master
+Updating a73003f..11a1f6f
+Fast-forward
+ mas_course/github_tutorial/jarvis_git_wiki | 3 +++
+ 1 file changed, 3 insertions(+)
+
+11. command to print logs
+rubanraj54@Ruby:~/fc_documents/FoundationCourse$ git log
+
+
+
