@@ -205,4 +205,23 @@ rubanraj54@Ruby:~/fc_documents/FoundationCourse$ git branch
   temp
 rubanraj54@Ruby:~/fc_documents/FoundationCourse$ 
 
+13. delete a branch
+
+rubanraj54@Ruby:~/fc_documents/FoundationCourse$ git branch
+* master
+  temp
+  temp_1
+rubanraj54@Ruby:~/fc_documents/FoundationCourse$ git branch -D temp
+Deleted branch temp (was 90aa379).
+rubanraj54@Ruby:~/fc_documents/FoundationCourse$ git branch -D temp_1
+Deleted branch temp_1 (was 90aa379).
+rubanraj54@Ruby:~/fc_documents/FoundationCourse$ git branch -D temp_1
+error: branch 'temp_1' not found.
+
+14. command to remove a folder from git
+rubanraj54@Ruby:~/fc_documents/FoundationCourse$ git rm mas_course1
+fatal: not removing 'mas_course1' recursively without -r
+rubanraj54@Ruby:~/fc_documents/FoundationCourse$ git rm -r mas_course1
+rm 'mas_course1/github_tutorial1/dummy.txt'
+
 
