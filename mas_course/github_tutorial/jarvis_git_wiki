@@ -1,0 +1,149 @@
+settings --> ssh & GPG key -> generate ssh keys
+
+1. steps to generate ssh key:
+
+rubanraj54@Ruby:~$ ssh-keygen -t rsa -b 4096 -C "rubanraj54@gmail.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/rubanraj54/.ssh/id_rsa): 
+Created directory '/home/rubanraj54/.ssh'.
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/rubanraj54/.ssh/id_rsa.
+Your public key has been saved in /home/rubanraj54/.ssh/id_rsa.pub.
+The key fingerprint is:
+f9:61:7a:fc:17:96:6b:66:11:8c:de:8b:b4:e2:02:43 rubanraj54@gmail.com
+The key's randomart image is:a
++--[ RSA 4096]----+
+|                 |
+|                 |
+|             o   |
+|      E  .  . o  |
+|     .  S o. . o |
+|      o  = .o *  |
+|       o. +. + = |
+|        ....o B  |
+|         o...=   |
++-----------------+
+
+
+
+2. add the generated ssh key to github
+
+rubanraj54@Ruby:~/.ssh$ ls
+id_rsa  id_rsa.pub
+rubanraj54@Ruby:~/.ssh$ cat id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCwYIdsyeLVaHozVcXN6lZjrZg6x9wkdpPqn8pvkFvFmFm7Jod1NMeU04NSUqR11CYcgJJ7Ml7jgteUNxmNAXzCYtPJFiNKsT30Sb+F+kp3tQwJjLb2z9We17JbI5TKo8UtgEHaEwZiwtcrTRdogy6Kvk/2DFuXFdj2JQzQuyCmjQUE5y7R7VySwuc9kFSgPK71Erx5NnPe/jZ4dESlJMa5TZCHewltv9JgmIpLP60FQBrVzt+EVv1EvKcqKuWYcJu/fKrNP6y+xZncjwKBeC8NKrGAyqydB2QimxG48C5waURXSbo85QVyNFfNiKDv0a0is+d0tjJJjZERvV8O8ZtuSM3GuvNkFKh+PcCx+1x/yuYBXQSgW5Rb1Rb5dI9k1hFEs9QqHJSbxXOgGlLHqn6XPDNzGMB4dtPnGfMaFGmXCS74DtKwGoIQT5cdf18moNb2dWvRjb5NyQsX20jiq7u4//Kn/l9rOWXb1RB9sQJIhS56rOTcBtes48qobdxb2RfEPrzSqFZ6oVMZR1bs14AYzP3llvxe/rh6sJa6U7eLU9jTVe4eifuBw+LRCxU1wjyPbhxDecy9ykV+JWv3KGxToBD49WW6wT3UrKIiKeon/ZtCyIAIABPq5fzRE8RtOGI/8j1lnT2DXajGYEu287CoiVFkGdarZo38fytOkrqqaQ== rubanraj54@gmail.com
+
+copy the content and go th ssh keys in github settings, click add ssh key. enter a name and paste the copied ssh key and save it.
+
+3. Test the ssh key
+rubanraj54@Ruby:~$ ssh -T git@github.com
+The authenticity of host 'github.com (192.30.253.113)' can't be established.
+RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'github.com,192.30.253.113' (RSA) to the list of known hosts.
+Hi rubanraj54! You've successfully authenticated, but GitHub does not provide shell access.
+rubanraj54@Ruby:~$ ^C
+rubanraj54@Ruby:~$ 
+
+4. steps to clone the repo in to ur local machine
+copy the .git link from the website and execute the following command.
+rubanraj54@Ruby:~/fc_documents$ git clone https://github.com/rubanraj54/FoundationCourse.git
+Cloning into 'FoundationCourse'...
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+Checking connectivity... done.
+rubanraj54@Ruby:~/fc_documents$ ls
+FoundationCourse
+rubanraj54@Ruby:~/fc_documents$ cd FoundationCourse/
+rubanraj54@Ruby:~/fc_documents/FoundationCourse$ ls
+README.md
+rubanraj54@Ruby:~/fc_documents/FoundationCourse$ cat README.md 
+# FoundationCourse
+This repo is used to store my documents
+rubanraj54@Ruby:~/fc_documents/FoundationCourse$ ^C
+rubanraj54@Ruby:~/fc_documents/FoundationCourse$ 
+
+
+5. to check the current branch 
+rubanraj54@Ruby:~/fc_documents/FoundationCourse$ git branch
+* master
+
+6. to get the origin
+// -v means verbose mode abd it will more information
+rubanraj54@Ruby:~/fc_documents/FoundationCourse$ git remote -v
+origin	https://github.com/rubanraj54/FoundationCourse.git (fetch)
+origin	https://github.com/rubanraj54/FoundationCourse.git (push)
+rubanraj54@Ruby:~/fc_documents/FoundationCourse$ git remote
+origin
+
+7.to check the status
+rubanraj54@Ruby:~/fc_documents/FoundationCourse$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+nothing to commit, working directory clean
+
+
+8. --going to change repository file
+-- seeing the status
+-- add the changed to git
+-- commit the changes to git
+
+rubanraj54@Ruby:~$ ls
+Desktop  dir1       Downloads         fc_documents  My Stuff  Public     Videos
+dir      Documents  examples.desktop  Music         Pictures  Templates
+rubanraj54@Ruby:~$ cd fc_documents/
+rubanraj54@Ruby:~/fc_documents$ ls
+FoundationCourse
+rubanraj54@Ruby:~/fc_documents$ cd FoundationCourse/
+rubanraj54@Ruby:~/fc_documents/FoundationCourse$ ls
+README.md
+rubanraj54@Ruby:~/fc_documents/FoundationCourse$ nano README.md 
+rubanraj54@Ruby:~/fc_documents/FoundationCourse$ cat README.md 
+# FoundationCourse
+This repo is used to store my documents
+I changed the readme file third time
+rubanraj54@Ruby:~/fc_documents/FoundationCourse$ git add
+Nothing specified, nothing added.
+Maybe you wanted to say 'git add .'?
+rubanraj54@Ruby:~/fc_documents/FoundationCourse$ git add README.md 
+rubanraj54@Ruby:~/fc_documents/FoundationCourse$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   README.md
+
+rubanraj54@Ruby:~/fc_documents/FoundationCourse$ git commit
+[master 8dee40b] I have modifed the file third time
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+rubanraj54@Ruby:~/fc_documents/FoundationCourse$ 
+
+
+9. steps to push the repository
+rubanraj54@Ruby:~/fc_documents/FoundationCourse$ git branch
+* master
+rubanraj54@Ruby:~/fc_documents/FoundationCourse$ git remote -v
+origin	https://github.com/rubanraj54/FoundationCourse.git (fetch)
+origin	https://github.com/rubanraj54/FoundationCourse.git (push)
+rubanraj54@Ruby:~/fc_documents/FoundationCourse$ git push origin master
+Username for 'https://github.com': rubanraj54
+Password for 'https://rubanraj54@github.com': 
+Counting objects: 8, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (6/6), 577 bytes | 0 bytes/s, done.
+Total 6 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/rubanraj54/FoundationCourse.git
+   254867a..8dee40b  master -> master
+rubanraj54@Ruby:~/fc_documents/FoundationCourse$ 
+
+
+assignment ->mas_course-> foundation_course -> github tutorial -> Jarvis_git.txt
