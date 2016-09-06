@@ -205,4 +205,17 @@ rubanraj54@Ruby:~/fc_documents/FoundationCourse$ git branch
   temp
 rubanraj54@Ruby:~/fc_documents/FoundationCourse$ 
 
+13. delete a branch
+
+rubanraj54@Ruby:~/fc_documents/FoundationCourse$ git branch
+* master
+  temp
+  temp_1
+rubanraj54@Ruby:~/fc_documents/FoundationCourse$ git branch -D temp
+Deleted branch temp (was 90aa379).
+rubanraj54@Ruby:~/fc_documents/FoundationCourse$ git branch -D temp_1
+Deleted branch temp_1 (was 90aa379).
+rubanraj54@Ruby:~/fc_documents/FoundationCourse$ git branch -D temp_1
+error: branch 'temp_1' not found.
+
 

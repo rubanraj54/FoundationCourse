@@ -197,5 +197,12 @@ Fast-forward
 11. command to print logs
 rubanraj54@Ruby:~/fc_documents/FoundationCourse$ git log
 
+12. create branch under master branch
+
+rubanraj54@Ruby:~/fc_documents/FoundationCourse$ git branch temp
+rubanraj54@Ruby:~/fc_documents/FoundationCourse$ git branch
+* master
+  temp
+rubanraj54@Ruby:~/fc_documents/FoundationCourse$ 
 
 
