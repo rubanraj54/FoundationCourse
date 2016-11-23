@@ -1,0 +1,13 @@
+503  git clone gitgate@mas.b-it-center.de:amr-lab/stage.git
+  504  cmake -DCMAKE_INSTALL_PREFIX=/opt/ros/indigo
+  505  cd stage/
+  506  ls
+  507  cmake -DCMAKE_INSTALL_PREFIX=/opt/ros/indigo
+  508  make
+  509  sudo make install
+  510  sudo ln -s /opt/ros/indigo/lib64/libstage.so.4.1.1 /opt/ros/indigo/lib/libstage.so
+  511  echo "export LD_LIBRARY_PATH+=:/opt/ros/indigo/lib64" >> ~/.bashrc
+  512  . ~/.bashrc
+  513  clear
+  514  cd
+  515  source .bashrc
