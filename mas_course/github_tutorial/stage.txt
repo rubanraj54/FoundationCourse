@@ -11,3 +11,6 @@
   513  clear
   514  cd
   515  source .bashrc
+  
+  #this file contains the important commands to be executed before start with amr assignments.
+  #Commands to install custom stage instead of ros stage..
