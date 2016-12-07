@@ -224,4 +224,17 @@ fatal: not removing 'mas_course1' recursively without -r
 rubanraj54@Ruby:~/fc_documents/FoundationCourse$ git rm -r mas_course1
 rm 'mas_course1/github_tutorial1/dummy.txt'
 
+15. command to get all the branches from a repo in git
+example:
+$ git branch -a
+* master
+  remotes/origin/HEAD
+  remotes/origin/master
+  remotes/origin/v1.0-stable
+  remotes/origin/experimental
+ But if you want to work on that branch, you'll need to create a local tracking branch:
 
+$ git checkout -b experimental origin/experimental
+
+Reference:
+http://stackoverflow.com/questions/67699/how-to-clone-all-remote-branches-in-git
