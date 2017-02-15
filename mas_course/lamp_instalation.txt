@@ -1,0 +1,58 @@
+lamp installation in ubuntu 14.04
+
+lsb_release -a
+
+sudo apt-get update
+
+install apache
+
+sudo apt-get install apache2 apache2-utils
+
+sudo nano /etc/apache2/mods-enabled/dir.conf
+
+sudo service apache2 restart
+
+install mysql
+
+sudo apt-get install mysql-server libapache2-mod-auth-mysql php5-mysql
+
+sudo mysql_install_db
+
+sudo mysql_secure_installation
+
+install php
+
+sudo apt-get install php5 php5-mysql php-pear php5-gd php5-mcrypt php5-curl 
+
+sudo touch var/www/html/phpinfo.php
+
+sudo nano /var/www/html/phpinfo.php
+
+
+<?php phpinfo();?>
+
+sudo touch /var/www/html/phpmysql.php
+
+sudo nano /var/www/html/phpmysql.php
+
+<?php
+$con = mysql_connect("localhost","root","password");
+if (!$con)
+{
+ die('Could not connect: ' . mysql_error());
+}
+else
+{
+ echo "Congrats! connection established successfully";
+}
+mysql_close($con);
+?>
+
+
+sudo apt-get install phpmyadmin
+
+sudo nano /etc/apache2/apache2.conf
+
+add this line --> Include /etc/phpmyadmin/apache.conf
+
+sudo service apache2 restart
